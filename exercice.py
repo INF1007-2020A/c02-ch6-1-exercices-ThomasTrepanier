@@ -8,23 +8,22 @@ import itertools
 
 
 def get_maximums(numbers):
-    return [max(list) for list in numbers]
+	return [max(list) for list in numbers]
 
 
 def join_integers(numbers):
-    return int("".join([str(number) for number in numbers]))
+	return int("".join([str(number) for number in numbers]))
 
 
 def generate_prime_numbers(limit):
-    prime = []
-    numbers = list(range(2, limit + 1))
-    while len(numbers) > 0:
-        nextPrime = numbers[0]
-        prime.append(nextPrime)
+	prime = []
+	numbers = range(2, limit)
+	while len(numbers) > 0:
+		nextPrime = numbers[0]
+		prime.append(nextPrime)
 
-        numbers = [i for i in numbers if i % nextPrime != 0]
-    return prime
-
+		numbers = [i for i in range(2, numbers[0] + 1) if numbers[0] % i != 0]
+	return prime
 
 def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
     # Une ligne (+ Cool)
